@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Shrikhand&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Archivo Black", "Impact", "Arial Black", sans-serif;
+  --font-fun: "Shrikhand", "Georgia", serif;
+  --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-hot: #ff2e88;
+  --color-lemon: #ffe600;
+  --color-lime: #a3ff12;
+  --color-sky: #19c7ff;
+  --color-grape: #7b2cff;
+  --color-tangerine: #ff6a00;
+  --color-ink: #0b0b14;
+  --color-cream: #fff7e6;
+
+  --shadow-pop: 6px 6px 0 0 #0b0b14;
+  --shadow-pop-lg: 10px 10px 0 0 #0b0b14;
+  --shadow-pop-hot: 6px 6px 0 0 #ff2e88;
+  --shadow-pop-grape: 6px 6px 0 0 #7b2cff;
+  --shadow-pop-sky: 6px 6px 0 0 #19c7ff;
+
+  --animate-wiggle: wiggle 2.4s ease-in-out infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-marquee: marquee 24s linear infinite;
+  --animate-blink: blink 1.2s steps(2, start) infinite;
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+}
+
+html {
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(255, 46, 136, 0.28) 0, transparent 28%),
+    radial-gradient(circle at 90% 20%, rgba(25, 199, 255, 0.3) 0, transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(163, 255, 18, 0.3) 0, transparent 32%),
+    radial-gradient(circle at 85% 85%, rgba(123, 44, 255, 0.25) 0, transparent 28%),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 18px,
+      rgba(11, 11, 20, 0.04) 18px 20px
+    );
+  background-attachment: fixed;
+  color: var(--color-ink);
+}
+
+/* Decorative utility classes */
+.bg-dots {
+  background-image: radial-gradient(#0b0b14 1.4px, transparent 1.6px);
+  background-size: 14px 14px;
+}
+.bg-stripes-hot {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #ff2e88 0 12px,
+    #ffe600 12px 24px
+  );
+}
+.bg-stripes-sky {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #19c7ff 0 12px,
+    #0b0b14 12px 24px
+  );
+}
+.bg-checker {
+  background-image:
+    linear-gradient(45deg, #0b0b14 25%, transparent 25%),
+    linear-gradient(-45deg, #0b0b14 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #0b0b14 75%),
+    linear-gradient(-45deg, transparent 75%, #0b0b14 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0;
+}
+.text-outline {
+  -webkit-text-stroke: 2px #0b0b14;
+  paint-order: stroke fill;
+}
+.text-outline-thin {
+  -webkit-text-stroke: 1px #0b0b14;
+  paint-order: stroke fill;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #ff2e88, #ff6a00, #ffe600, #a3ff12, #19c7ff, #7b2cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+::selection {
+  background: var(--color-lemon);
+  color: var(--color-ink);
+}
+
+input,
+textarea {
+  font-family: var(--font-body);
+}
